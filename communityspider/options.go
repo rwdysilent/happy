@@ -11,15 +11,15 @@ import (
 )
 
 var (
-	o        bool
-	xlsxFile string
-	fileSheet    string
+	o         bool
+	xlsxFile  string
+	fileSheet string
 )
 
 func usage() {
 	flag.BoolVar(&o, "o", false, "do you need to write xls file?")
 	flag.StringVar(&xlsxFile, "file", "tmp.xlsx", "need excel file location")
-	flag.StringVar(&sheet, "sheet", "work1", "xls file work sheet name")
+	flag.StringVar(&fileSheet, "sheet", "Sheet1", "xls file work sheet name")
 	flag.Parse()
 }
 
@@ -29,18 +29,4 @@ func init() {
 		flag.Usage()
 		os.Exit(0)
 	}
-}
-
-func fileCheck() error {
-	f, err := os.Open(xlsxFile)
-	defer f.Close()
-
-	if err != nil {
-		ff, err := os.Create(xlsxFile)
-		defer ff.Close()
-		if err != nil {
-			return err
-		}
-	}
-	return nil
 }

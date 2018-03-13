@@ -52,18 +52,11 @@ var (
 	baseUrl = "https://xa.fang.lianjia.com/"
 	homeLink  = new(HomeLink)
 	homeList  = new(HomeList)
-	//ytUrl   = "https://xa.fang.lianjia.com/loupan/yanta/bap0eap15000nht1nhs1nhs3/#yanta"
-	//ytYFUrl = "https://xa.fang.lianjia.com/loupan/yanta/nho0nho1nht1nhs1nhs3nhtt17/"
-
 	ytInfo = struct {
 		url string
-		file string
-		fileSheet string
 	}{
 		//18000
 		"https://xa.fang.lianjia.com/loupan/yanta/bap0eap18000nht1nhs1nhs3pg1/",
-		xlsxFile,
-		fileSheet,
 	}
 )
 
@@ -157,11 +150,15 @@ func GetDetail(url string) HomeDetail {
 	return d
 }
 
-func StartSpider(){
+func StartSpider() {
 	list := GetHomeList(ytInfo.url)
-	for _, url := range list.HomeLink{
-		fmt.Println(url.Name, url.Link)
+	for i, url := range list.HomeLink {
+		//fmt.Println(url.Name, url.Link)
+		detail := GetDetail(url.Link)
+		detail.Link = url.Link
+		fmt.Println(detail)
+		if o {
+			OutputFile(i, detail)
+		}
 	}
 }
-
-
