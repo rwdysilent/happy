@@ -61,9 +61,9 @@ var (
 		fileSheet string
 	}{
 		//18000
-		"https://xa.fang.lianjia.com/loupan/yanta/bap0eap18000nht1nhs1nhs3pg3/",
-		"/Users/pfwu/Documents/西安雁塔小区信息.xlsx",
-		"18000-3",
+		"https://xa.fang.lianjia.com/loupan/yanta/bap0eap18000nht1nhs1nhs3pg1/",
+		xlsxFile,
+		fileSheet,
 	}
 )
 

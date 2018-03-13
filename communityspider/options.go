@@ -13,7 +13,7 @@ import (
 var (
 	o        bool
 	xlsxFile string
-	sheet    string
+	fileSheet    string
 )
 
 func usage() {
