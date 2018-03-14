@@ -8,7 +8,7 @@
   -file string
     	need excel file location (default "tmp.xlsx")
   -o	bool
-      do you need to write xls file?
+        do you need to write xls file?
   -sheet string
     	xls file work sheet name (default "Sheet1")
 ```
